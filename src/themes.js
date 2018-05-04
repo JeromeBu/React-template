@@ -1,10 +1,10 @@
 export const mainTheme = {
   // NavBar related :
   fontSize: "1rem",
-  fontColor: "#9b9d9f",
-  linkHoverColor: "white",
+  fontColor: "#FCFFFF",
+  linkHoverColor: "#d6d6d6",
   navBarHeight: "60px",
-  navBarBackgroundColor: "#363a3f",
-  tablettesBreakPoint: "992px",
+  navBarBackgroundColor: "#4386EE",
+  tablettesBreakPoint: "1024px",
   phonesBreakPoint: "480px"
 }

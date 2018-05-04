@@ -11,14 +11,13 @@ export class MenuButton extends React.Component {
 
   render() {
     const { showMenu, toogleMenu } = this.props
-    console.log("RENDER MenuButton, showMenu : ", showMenu)
-
     return (
       <Wrapper onClick={toogleMenu}>
         {showMenu ? (
           <div>
-            <i className="fas fa-caret-right" />
-            <p>Hide Menu</p>
+            <i className="fas fa-bars" />
+            {/* <i className="fas fa-caret-right" /> */}
+            {/* <p>Hide Menu</p> */}
           </div>
         ) : (
           <div>

@@ -6,6 +6,8 @@ export const Wrapper = styled.div`
   top: 0;
   left: 0;
   right: 0;
+  padding: 0 20px;
+  color: ${props => props.theme.fontColor}
   font-size: ${props => props.theme.fontSize};
   height: ${props => props.theme.navBarHeight};
   display: flex;
@@ -50,6 +52,5 @@ export const Spacer = styled.div`
 `
 
 export const Logo = styled.img`
-  height: 30px;
-  padding: 0 10px;
+  height: 40px;
 `

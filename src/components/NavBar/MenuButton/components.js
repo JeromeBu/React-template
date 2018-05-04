@@ -6,7 +6,6 @@ export const Wrapper = styled.li`
   color: ${props => props.theme.fontColor};
   max-width: 150px;
   text-align: right;
-  padding: 0 20px;
   line-height: ${props => props.theme.navBarHeight};
   height: ${props => props.theme.navBarHeight};
 

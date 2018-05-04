@@ -2,16 +2,17 @@ import React, { Component } from "react"
 import { NavBarItem } from "./NavBarItem"
 import { Wrapper, Spacer, Logo, ItemsWrapper } from "./components"
 import { MenuButton } from "./MenuButton"
-import PropTypes from "prop-types"
 
 export default class NavBar extends Component {
   render() {
-    const { items, showMenu, toogleMenu, hideMenu } = this.props
+    const { items, showMenu, toogleMenu, hideMenu, setWrapperRef } = this.props
     return (
       <React.Fragment>
-        <Wrapper>
-          <Logo src="images/logo.png" alt="logo" />
+        <Wrapper innerRef={setWrapperRef}>
+          <Logo src="images/logo.svg" alt="logo" />
           <MenuButton showMenu={showMenu} toogleMenu={toogleMenu} />
+          {/* <div ref={setWrapperRef}>SALUT LES GROS !</div> */}
+          {/* <div ref={setWrapperRef}> */}
           <ItemsWrapper showMenu={showMenu}>
             {items.map(element => {
               return (
@@ -27,6 +28,7 @@ export default class NavBar extends Component {
               )
             })}
           </ItemsWrapper>
+          {/* </div> */}
         </Wrapper>
         <Spacer className="spacer" />
       </React.Fragment>

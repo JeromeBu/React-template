@@ -17,7 +17,9 @@ export class NavBarItem extends React.Component {
     return (
       <Wrapper disabled={disabled} onClick={hideMenu}>
         <Link to={route}>
-          {icon && <i className={icon} />} {children}
+          {icon && <i className={icon} />}
+          &nbsp; &nbsp; &nbsp;
+          {children}
         </Link>
       </Wrapper>
     )
