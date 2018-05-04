@@ -1,27 +1,39 @@
 import React from "react"
 import { Form } from "."
+import PropTypes from "prop-types"
 
 export class FormContainer extends React.Component {
+  static propTypes = {
+    url: PropTypes.string,
+    overwriteInputs: PropTypes.arrayOf(PropTypes.object)
+  }
+
   state = {
     loading: true,
     inputs: [],
     inputValues: {}
   }
 
-  componentDidMount() {
-    fetch(
-      "https://lereacteurapp.s3.amazonaws.com/react/deliveroo/deliveroo-shipping-form.json"
-    )
-      .then(response => {
-        return response.json()
+  componentDidMount = () => {
+    const { url, inputs } = this.props
+    if (inputs) {
+      this.setState({
+        inputs: inputs,
+        loading: false
       })
-      .then(json => {
-        console.log("Data fetched : ", json)
-        this.setState({
-          inputs: json,
-          loading: false
+    } else {
+      fetch(url)
+        .then(response => {
+          return response.json()
         })
-      })
+        .then(json => {
+          console.log("Data fetched : ", json)
+          this.setState({
+            inputs: json,
+            loading: false
+          })
+        })
+    }
   }
 
   // const title = "Le titre du formulaire"

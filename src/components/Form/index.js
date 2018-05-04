@@ -56,16 +56,11 @@ export class Form extends React.Component {
                 <Input
                   id={input.name}
                   placeholder={input.placeholder}
-                  type="text"
+                  type={input.type || "text"}
                   value={values[input.name]}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   hasError={errors[input.name] && touched[input.name]}
-                  className={
-                    errors[input.name] && touched[input.name]
-                      ? "text-input error"
-                      : "text-input"
-                  }
                 />
                 <Error>
                   {errors[input.name] &&
@@ -76,8 +71,6 @@ export class Form extends React.Component {
             )
           })
 
-          console.log("RENDERED FORM")
-          console.log(this.props.inputs)
           return (
             <Wrapper onSubmit={handleSubmit}>
               {inputs}
